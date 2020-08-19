@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../webfonts/Roboto-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+    }
+
+@font-face {
+        font-family: 'Roboto-Medium';
+        src: url('../webfonts/Roboto-Medium.ttf');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+@mixin Regular{
+    font-family: 'Roboto-Regular' ,serif;
+}
+@mixin Medium{
+    font-family: 'Roboto-Medium' ,serif;
+}
