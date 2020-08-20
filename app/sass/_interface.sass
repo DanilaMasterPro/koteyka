@@ -6,10 +6,12 @@ body
     padding: 0
     font-size: 16px
     height: 100%
+    padding-top: 70px
 input, textarea
     border: none
-h1,h2,h3,h4,p,figure
+h1,h2,h3,h4,p,
         margin: 0
+
 h1
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
 
@@ -18,12 +20,11 @@ a
 
 // USER VARIABLES SECTION
 
-$accent: orange // Accent Color
+$accent: #FAC663 // Accent Color
 $fontsize: 16px // Body Font Size
-$textcolor: #333 // Text Color
+$textcolor: #1A212F // Text Color
 $system: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
-$roboto: Roboto, sans-serif // Roboto Font Family
-$dark: #1A212F
+$default_font: Lato, sans-serif // Lato Font Family
 // Bootstrap compatible gutter variable => $gutter
 $grid-gutter-width: 20px
 $gutter: $grid-gutter-width
@@ -40,19 +41,13 @@ $gutter: $grid-gutter-width
         // font-display: swap // Uncomment to initially display system fonts
         src: local($fname), url($furl) format('woff2')
 
-@include font('Roboto', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('Roboto', italic, 400, '../fonts/roboto-italic-webfont.woff2')
-@include font('Roboto', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('Roboto', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+@include font('Lato', normal, 400, '../fonts/Lato/Lato-Regular.ttf')
+@include font('Rubik', bold, 700, '../fonts/Rubik/Rubik-Bold.ttf')
 
 // GENERAL DOCUMENT STYLES
 
-::placeholder
-    color: #666
-
-::selection
-    background-color: $accent
-    color: #fff
+h1,h2,h3,h4
+    font-family: 'Rubik'
 
 input, textarea
     outline: none
@@ -62,11 +57,17 @@ input, textarea
         border-color: green
 
 body
-    font-family: $roboto
+    font-family: $default_font
     font-size: $fontsize
     min-width: 320px
     position: relative
     line-height: 1.65
     overflow-x: hidden
     color: $textcolor
+
+.btn
+    border-radius: 25px
+    padding: 15px
+    text-align: center
+    display: inline-block
 
