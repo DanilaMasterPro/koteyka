@@ -11,4 +11,15 @@ document.addEventListener("DOMContentLoaded", function() {
 		
 	});
 
+	var askFilter = d.querySelector('.btn-ask-filter');
+	askFilter.addEventListener('click', function(e){
+		e.preventDefault();
+		d.querySelector('.filter').classList.add('active');
+	})
+	var closeFilter = d.querySelector('.close');
+	closeFilter.addEventListener('click', function(e){
+		e.preventDefault();
+		d.querySelector('.filter').classList.remove('active');
+	})
+
 });

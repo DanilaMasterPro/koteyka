@@ -8,34 +8,174 @@
 @import header
 
 
-
+.title
+	margin-bottom: 20px
 .title h1
 	margin-top: 30px
 	font-size: 36px
 
+.title-futures
+	display: flex
+	position: relative
+
 .filter-area
-	width: 174px
+	width: 150px
 	background-color: #fff
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
-	overflow: hidden
 	height: 47px
 	transition: all .5s
 	border-radius: 4px
+	display: inline-block
+	position: relative
+	.filter-area-wrapper
+		position: absolute
+		width: 100%
+		top: 0
+		left: 0
+		background-color:#fff
+		height: 0
+		overflow: hidden
+		transition: all .5s
+		z-index: 1
 	&.active
-		height: 191px
+		box-shadow: none
+		.filter-area-wrapper
+			height: 191px
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+	
 	.filter-area-elem
 		padding: 12px 20px
 		font-size: 14px
 
 
 
-.checkbox-wrapper
+.btn-ask-filter
+	background-color: $accent
+	width: 134px
+	margin-bottom: 11px
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
 	display: block
-	input
-		display: none
+	border: 2px solid $accent
+	border-radius: 4px
+	display: inline-block
+	color: $textcolor
+	height: 46px
+	margin-left: 5px
+
+
+.filter
+	position: absolute
+	left: -100%
+	top: 80px
+	transition: all .5s
+	background-color: #fff
+	box-shadow: 0px 0px 15px #000
+	z-index: 2
+	width: 90%
+	&.active
+		left: 0
+	p
+		margin-bottom: 20px
+		margin-top: 20px
+	.btn
+		background-color: $accent
+		width: 185px
+		margin-bottom: 11px
+		display: block
+		border: 2px solid $accent
+	.btn-reset
+		background-color: #fff
+		border: 2px solid $accent
+		font-size: 14px
+		color: $textcolor
+.filter-wrapper
+	position: relative
+	padding: 20px
+.close
+	position: absolute
+	right: 15px
+	top: 20px
+	width: 30px
+	height: 30px
+	span
+		display: block
+		width: 30px
+		height: 4px
+		background-color: $textcolor
+		&:first-child
+			transform: rotate(45deg)
+			position: relative
+			top: 12px
+		&:last-child
+			transform: rotate(-45deg)
+			position: relative
+			top: 8px
+			
+
+
+.filter-list-equipment
+	margin-bottom: 20px
+.filter-gap
+	display: flex
+	.input
+		width: 100px
+		margin-right: 10px
+		border: 1px solid #E1E1E1
+		padding-left: 5px
+		display: flex
+		input
+			width: 100%
+			padding: 0
+		span
+			margin-right: 5px
+			font-size: 14px
+			position: relative
+			bottom: 1px
 .checkmark
 	display: inline-block
 	width: 20px
 	height: 20px
 	border: 1px solid #E1E1E1
+	position: relative
+	margin-right: 10px
+	&:after
+		position: absolute
+		content: url('../images/dest/checked.svg')
+		left: 50%
+		top: 40%
+		-webkit-transform: translate(-50%, -50%)
+		-ms-transform: translate(-50%, -50%)
+		-o-transform: translate(-50%, -50%)
+		transform: translate(-50%, -50%)
+		opacity: 0
+		transition: all .2s
 
+
+.checkbox-wrapper
+	display: block
+	margin-bottom: 15px
+	input
+		display: none
+		&:checked
+			&+.checkmark
+				&:after
+					opacity: 1
+	span
+		position: relative
+		top: -4px
+
+@media (min-width: 992px)
+	.title-futures
+		position: absolute
+		right: 0
+		top: 0
+	.btn-ask-filter
+		display: none
+	.filter
+		position: static
+		width: auto
+		box-shadow: none
+	.close
+		display: none
+	.filter-wrapper
+		padding: 0
