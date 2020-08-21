@@ -23,6 +23,7 @@
 				<div class="header-logo">
 					<img src="images/dest/logo.svg" alt="Logo">
 				</div>
+
 				<div class="header-menu">
 					<nav>
 						<ul>
@@ -38,9 +39,29 @@
 					<span></span>
 					<span></span>
 				</div>
+				
 			</div>
 		</div>
 	</header>
+
+
+	<div class="mobile-menu">
+
+		<div class="mobile-menu-wrap">
+			<div class="close">
+							<span></span>
+							<span></span>
+						</div>
+			<nav>
+				<ul>
+					<li><a href="#">Почему мы?</a></li>
+					<li><a href="#">Номера</a></li>
+					<li><a href="#">Отзывы</a></li>
+					<li><a href="#">Как нас найти</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
 
 	<div class="title">
 		<div class="container">
@@ -48,12 +69,12 @@
 				<h1>Наши номера</h1>
 					<div class="title-futures">
 						<div class="filter-area">
-							<div class="filter-area-elem selected">По площади</div>
+							<div class="filter-area-elem selected"><img src="images/dest/arrow-to-top.svg" class="area-elem-arrow" alt="arrow-to-top">По площади</div>
 							<div class="filter-area-wrapper">
-								<div class="filter-area-elem option">По площади</div>
-								<div class="filter-area-elem option">По площади</div>
-								<div class="filter-area-elem option">По цене</div>
-								<div class="filter-area-elem option">По цене</div>
+								<div class="filter-area-elem option" data-sort="area-low" sort-type="data-area"><img src="images/dest/arrow-to-top.svg" class="area-elem-arrow" alt="arrow-to-top">По площади</div>
+								<div class="filter-area-elem option" data-sort="area-big" sort-type="data-area"><img src="images/dest/arrow-to-bottom.svg" class="area-elem-arrow" alt="arrow-to-bottom">По площади</div>
+								<div class="filter-area-elem option" data-sort="price-low" sort-type="data-price"><img src="images/dest/arrow-to-top.svg" class="area-elem-arrow" alt="arrow-to-top">По цене</div>
+								<div class="filter-area-elem option" data-sort="price-big" sort-type="data-price"><img src="images/dest/arrow-to-bottom.svg" class="area-elem-arrow" alt="arrow-to-bottom">По цене</div>
 							</div>
 						</div>
 						<a href="#" class="btn btn-ask-filter">Фильтр</a>

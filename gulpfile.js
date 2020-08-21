@@ -90,6 +90,8 @@ function cleanimg() {
 	return del('' + paths.images.dest + '/**/*', { force: true })
 }
 
+
+
 function deploy() {
 	return src(baseDir + '/')
 	.pipe(rsync({
@@ -103,6 +105,22 @@ function deploy() {
 		silent: false,
 		compress: true
 	}))
+}
+
+
+function buildcopy() {
+	return src([ // Выбираем нужные файлы
+		'app/css/**/*.min.css',
+		'app/js/**/*.min.js',
+		'app/images/dest/**/*',
+		'app/**/*.html',
+		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
+	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+}
+
+
+function cleandist() {
+	return del('dist/**/*', { force: true }) // Удаляем всё содержимое папки "dist/"
 }
 
 function startwatch() {
@@ -119,4 +137,6 @@ exports.scripts     = scripts;
 exports.images      = images;
 exports.cleanimg    = cleanimg;
 exports.deploy      = deploy;
+
+exports.build = series(cleandist, styles, scripts, images, buildcopy);
 exports.default     = parallel(images, styles, scripts, browsersync, startwatch);

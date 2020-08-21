@@ -17,6 +17,16 @@
 	border-radius: 4px
 	display: inline-block
 	position: relative
+	&:after
+		position: absolute
+		content: url('../images/dest/arrow-filter.svg')
+		display: block
+		width: 15px
+		height: 30px
+		top: 8px
+		right: 15px
+		z-index: 2
+		transition: all .5s
 	.filter-area-wrapper
 		position: absolute
 		width: 100%
@@ -29,6 +39,8 @@
 		z-index: 1
 	&.active
 		box-shadow: none
+		&:after
+			transform: rotate(-180deg)
 		.filter-area-wrapper
 			height: 191px
 			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
@@ -36,6 +48,8 @@
 	.filter-area-elem
 		padding: 12px 20px
 		font-size: 14px
+	.area-elem-arrow
+		margin-right: 5px
 
 
 
@@ -59,5 +73,7 @@
 		top: 0
 	.btn-ask-filter
 		display: none
-	.filter-area:hover
-		cursor: pointer
+	.filter-area
+		width: 174px
+		&:hover
+			cursor: pointer
