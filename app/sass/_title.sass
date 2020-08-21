@@ -1,0 +1,63 @@
+.title
+	margin-bottom: 20px
+.title h1
+	margin-top: 30px
+	font-size: 36px
+
+.title-futures
+	display: flex
+	position: relative
+
+.filter-area
+	width: 150px
+	background-color: #fff
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+	height: 47px
+	transition: all .5s
+	border-radius: 4px
+	display: inline-block
+	position: relative
+	.filter-area-wrapper
+		position: absolute
+		width: 100%
+		top: 0
+		left: 0
+		background-color:#fff
+		height: 0
+		overflow: hidden
+		transition: all .5s
+		z-index: 1
+	&.active
+		box-shadow: none
+		.filter-area-wrapper
+			height: 191px
+			box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+	
+	.filter-area-elem
+		padding: 12px 20px
+		font-size: 14px
+
+
+
+.btn-ask-filter
+	background-color: $accent
+	width: 134px
+	margin-bottom: 11px
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+	display: block
+	border: 2px solid $accent
+	border-radius: 4px
+	display: inline-block
+	color: $textcolor
+	height: 46px
+	margin-left: 5px
+
+@media (min-width: 992px)
+	.title-futures
+		position: absolute
+		right: 0
+		top: 0
+	.btn-ask-filter
+		display: none
+	.filter-area:hover
+		cursor: pointer
