@@ -75,33 +75,33 @@
 						<form action="#">
 							<p>Цена за сутки, ₽</p>
 							<div class="filter-gap">
-								<div class="input"><span>от</span><input type="text" value="100" name="gap-from"></div>
-								<div class="input"><span>до</span><input type="text" value="600" name="gap-to"></div>
+								<div class="input"><span>от</span><input type="text" value="100" name="gap-from" id="gap-from"></div>
+								<div class="input"><span>до</span><input type="text" value="600" name="gap-to" id="gap-to"></div>
 							</div>
 							<p>Площадь</p>
 							<div class="filter-list-area">
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-area-checkbox" name='0.63'>
 									<div class="checkmark"></div>
 									<span>0,63 м2</span>
 								</label>
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-area-checkbox" name="0.90">
 									<div class="checkmark"></div>
 									<span>0,90 м2</span>
 								</label>
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-area-checkbox" name="1.13">
 									<div class="checkmark"></div>
 									<span>1,13 м2</span>
 								</label>
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-area-checkbox" name="1.56">
 									<div class="checkmark"></div>
 									<span>1,56 м2</span>
 								</label>
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-area-checkbox" name="2.56">
 									<div class="checkmark"></div>
 									<span>2,56 м2</span>
 								</label>
@@ -109,27 +109,27 @@
 							<p>Оснащение номера</p>
 							<div class="filter-list-equipment">
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-equipment-checkbox" name="Пустой">
 									<div class="checkmark"></div>
 									<span>Пустой номер</span>
 								</label>
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-equipment-checkbox" name="Лежак">
 									<div class="checkmark"></div>
 									<span>Лежак</span>
 								</label>
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-equipment-checkbox" name="Когтеточка">
 									<div class="checkmark"></div>
 									<span>Когтеточка</span>
 								</label>
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-equipment-checkbox" name="Игровой комплекс">
 									<div class="checkmark"></div>
 									<span>Игровой комплекс</span>
 								</label>
 								<label class="checkbox-wrapper">
-									<input type="checkbox">
+									<input type="checkbox" class="list-equipment-checkbox" name="Домик">
 									<div class="checkmark"></div>
 									<span>Домик</span>
 								</label>
@@ -140,7 +140,7 @@
 					</div>
 					
 				</div>
-				<div class="resault">
+				<div class="resault" id="resault">
 					<div class="item">
 						<div class="product">
 							<div class="product-thumbnail">
