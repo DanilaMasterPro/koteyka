@@ -40,10 +40,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Чекаем есть ли активные чекбоксы или нет
 	var checkboxesAll = document.querySelectorAll(".checkbox-wrapper input");
-
+	var emptyChechbox = d.querySelector('#empty-chechbox');
+	var uncheck = document.getElementsByClassName('list-equipment-checkbox');
 	for (var i = 0; i < checkboxesAll.length; i++) {
 	  checkboxesAll[i].onchange = function(){
 		var checkboxesChecked = [];
+
+
+		// Проверка на чебокс в оснащениях если выбрано Пустой номер то все остальные чекбоксы селтают, иначе наоборот
+		if (this.hasAttribute('id')){
+	  		 for (var b = 0; b < uncheck.length; b++) {
+	  		 	uncheck[b].checked = false;
+			}
+			this.checked = true;
+
+	  	} else {
+	  		emptyChechbox.checked = false;
+	  	}
+
+
+	  	// Показываем кнопку если есть хоть что-то чекнутое
 		for (var b = 0; b < checkboxesAll.length; b++) { 
 		  	if (checkboxesAll[b].checked) {
 		     	console.log('Чекнтуые есть')
@@ -64,6 +80,14 @@ document.addEventListener("DOMContentLoaded", function() {
 		this.classList.remove('active');
 		filter();
 	}
+
+
+
+
+
+
+	
+	
 
 
 
@@ -337,7 +361,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	for (var oi = 0; oi < options.length; oi++) {
 	  options[oi].onclick = function(){
 	  	var сondition = this.getAttribute("data-sort"),
-	  		сonditionType  = this.getAttribute("sort-type")
+	  		сonditionType  = this.getAttribute("data-sort-type")
 	  		сonditionContent = this.innerHTML;
 	  		this.closest(".filter-area").classList.remove('active')
 	  		this.closest(".filter-area").querySelector('.selected').innerHTML = сonditionContent;
